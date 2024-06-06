@@ -24,6 +24,12 @@ jobs:
         pip install nbconvert nbformat
         python -m ipykernel install --user --name python3 --display-name "Python 3"
 
+    - name: Debug Environment
+          run: |
+            python --version
+            pip list
+            jupyter kernelspec list
+
     - name: Run Colab Notebook
       run: |
         jupyter nbconvert --to notebook --execute --inplace Practice_KatherineAnne.ipynb
